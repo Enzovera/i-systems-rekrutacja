@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "psr-4": {"ApiClient\\": "ApiClient/"}
+    },
+  "require": {
+    "ext-curl": "*",
+    "ext-json": "*",
+    "phpunit/phpunit": "*"
+  }
+}
