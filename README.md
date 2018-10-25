@@ -1,1 +1,1 @@
-# iSystems-rekrutacja
+# i-systems-rekrutacja
