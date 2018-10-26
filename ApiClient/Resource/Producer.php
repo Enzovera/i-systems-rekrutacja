@@ -13,7 +13,7 @@ class Producer extends Resource
         string $site_url = "",
         string $logo_filename="",
         string $source_id = ""
-    ) : iResponse
+    ) : bool
     {
         $producer = [
             "producer" => [
@@ -25,7 +25,7 @@ class Producer extends Resource
                 'source_id' => $source_id
             ]
         ];
-        return $this->postResource($producer);
+        return $this->postResource($producer)->isSuccess();
     }
 
     public function getAll() : array
