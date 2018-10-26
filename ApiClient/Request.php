@@ -50,14 +50,14 @@ class Request implements iRequest
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         $error = curl_error($curl);
 
-        if(($httpcode == 200 || $httpcode == 400) && !$error){
+        if(($httpcode == 200) && !$error){
             return new Response($response);
         } else {
             if($error){
                 throw new RequestExceptions($error, $httpcode);
             } else {
                 $decode = json_decode($response);
-                if(isset($decode->data)) {
+                if(isset($decode->success)) {
                     $response = new Response($response);
                     throw new RequestExceptions($response->getErrorMessages(), $httpcode);
                 }
